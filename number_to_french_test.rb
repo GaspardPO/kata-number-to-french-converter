@@ -3,7 +3,7 @@ require "./number_to_french"
 
 class NumberToFrenchTest < Test::Unit::TestCase
   def test_return_zero
-    assert_equal'zero',  translate_to_french(0)
+    assert_equal'zéro',  translate_to_french(0)
   end
 
   def test_return_units
@@ -30,15 +30,28 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'quatre-vingt-dix', translate_to_french(90)
   end
 
-  def test_return_number_between_ten_and_twenty
+  def test_return_number_between_11_and_16
     assert_equal 'onze', translate_to_french(11)
     assert_equal 'douze', translate_to_french(12)
     assert_equal 'treize', translate_to_french(13)
     assert_equal 'quatorze', translate_to_french(14)
     assert_equal 'quinze', translate_to_french(15)
     assert_equal 'seize', translate_to_french(16)
+  end
+
+  def test_return_number_below_70
     assert_equal 'dix-sept', translate_to_french(17)
     assert_equal 'dix-huit', translate_to_french(18)
     assert_equal 'dix-neuf', translate_to_french(19)
+    assert_equal 'vingt-deux', translate_to_french(22)
+    assert_equal 'trente-trois', translate_to_french(33)
+    assert_equal 'cinquante-quatre', translate_to_french(54)
+    assert_equal 'soixante-neuf', translate_to_french(69)
   end
+
+  # todo :
+  # specific : "et un" : 21, 31, 41
+  # secific : "quantre-vingt-quatre", without "s" for "vingt"
+  # specific : 71-79 & 91-99
+  # > 100
 end
