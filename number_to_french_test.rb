@@ -3,7 +3,7 @@ require "./number_to_french"
 
 class NumberToFrenchTest < Test::Unit::TestCase
   def test_return_zero
-    assert_equal 'zero', translate_to_french(0)
+    assert_equal'zero',  translate_to_french(0)
   end
 
   def test_return_units
@@ -30,4 +30,15 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'quatre-vingt-dix', translate_to_french(90)
   end
 
+  def test_return_number_between_ten_and_twenty
+    assert_equal 'onze', translate_to_french(11)
+    assert_equal 'douze', translate_to_french(12)
+    assert_equal 'treize', translate_to_french(13)
+    assert_equal 'quatorze', translate_to_french(14)
+    assert_equal 'quinze', translate_to_french(15)
+    assert_equal 'seize', translate_to_french(16)
+    assert_equal 'dix-sept', translate_to_french(17)
+    assert_equal 'dix-huit', translate_to_french(18)
+    assert_equal 'dix-neuf', translate_to_french(19)
+  end
 end
