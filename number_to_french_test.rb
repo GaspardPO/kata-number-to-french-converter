@@ -3,7 +3,7 @@ require "./number_to_french"
 
 class NumberToFrenchTest < Test::Unit::TestCase
   def test_return_zero
-    assert_equal'zéro',  translate_to_french(0)
+    assert_equal 'zéro', translate_to_french(0)
   end
 
   def test_return_units
@@ -59,8 +59,15 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'soixante-et-un', translate_to_french(61)
   end
 
+  def test_specific_quatre_vingts
+    # when not followed by anything, "vingts" is plural, with an "S"
+    assert_equal 'quatre-vingts', translate_to_french(80)
+
+    # when followed by another number, "vingt" is singular, without an "S"
+    assert_equal 'quatre-vingt-quatre', translate_to_french(84) # and not "quatre-vingts-quatre"
+  end
+
   # todo :
-  # secific : "quatre-vingt-quatre", without "s" for "vingt"
   # specific : 71-79 & 91-99
   # > 100
 end
