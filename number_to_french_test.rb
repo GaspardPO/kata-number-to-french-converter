@@ -49,9 +49,18 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'soixante-neuf', translate_to_french(69)
   end
 
+  def test_specific_et_un
+    # traditional french use "vingt et un" with spaces, but since 1990 reform the rule is "vingt-et-un" with dashes.
+    # and it is easier to do !
+    assert_equal 'vingt-et-un', translate_to_french(21)
+    assert_equal 'trente-et-un', translate_to_french(31)
+    assert_equal 'quarante-et-un', translate_to_french(41)
+    assert_equal 'cinquante-et-un', translate_to_french(51)
+    assert_equal 'soixante-et-un', translate_to_french(61)
+  end
+
   # todo :
-  # specific : "et un" : 21, 31, 41
-  # secific : "quantre-vingt-quatre", without "s" for "vingt"
+  # secific : "quatre-vingt-quatre", without "s" for "vingt"
   # specific : 71-79 & 91-99
   # > 100
 end
