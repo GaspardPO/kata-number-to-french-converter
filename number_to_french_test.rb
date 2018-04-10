@@ -6,7 +6,7 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'zéro', translate_to_french(0)
   end
 
-  def test_return_units
+  def test_return_numbers_less_than_twenty
     assert_equal 'un', translate_to_french(1)
     assert_equal 'deux', translate_to_french(2)
     assert_equal 'trois', translate_to_french(3)
@@ -16,6 +16,16 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'sept', translate_to_french(7)
     assert_equal 'huit', translate_to_french(8)
     assert_equal 'neuf', translate_to_french(9)
+    assert_equal 'dix', translate_to_french(10)
+    assert_equal 'onze', translate_to_french(11)
+    assert_equal 'douze', translate_to_french(12)
+    assert_equal 'treize', translate_to_french(13)
+    assert_equal 'quatorze', translate_to_french(14)
+    assert_equal 'quinze', translate_to_french(15)
+    assert_equal 'seize', translate_to_french(16)
+    assert_equal 'dix-sept', translate_to_french(17)
+    assert_equal 'dix-huit', translate_to_french(18)
+    assert_equal 'dix-neuf', translate_to_french(19)
   end
 
   def test_return_tens
@@ -30,19 +40,7 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'quatre-vingt-dix', translate_to_french(90)
   end
 
-  def test_return_number_between_11_and_16
-    assert_equal 'onze', translate_to_french(11)
-    assert_equal 'douze', translate_to_french(12)
-    assert_equal 'treize', translate_to_french(13)
-    assert_equal 'quatorze', translate_to_french(14)
-    assert_equal 'quinze', translate_to_french(15)
-    assert_equal 'seize', translate_to_french(16)
-  end
-
   def test_return_number_below_70
-    assert_equal 'dix-sept', translate_to_french(17)
-    assert_equal 'dix-huit', translate_to_french(18)
-    assert_equal 'dix-neuf', translate_to_french(19)
     assert_equal 'vingt-deux', translate_to_french(22)
     assert_equal 'trente-trois', translate_to_french(33)
     assert_equal 'cinquante-quatre', translate_to_french(54)
@@ -51,7 +49,7 @@ class NumberToFrenchTest < Test::Unit::TestCase
 
   def test_specific_et_un
     # traditional french use "vingt et un" with spaces, but since 1990 reform the rule is "vingt-et-un" with dashes.
-    # and it is easier to do !
+    # and it is easier to do!
     assert_equal 'vingt-et-un', translate_to_french(21)
     assert_equal 'trente-et-un', translate_to_french(31)
     assert_equal 'quarante-et-un', translate_to_french(41)
@@ -81,12 +79,14 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'quatre-vingt-dix-neuf', translate_to_french(99)
   end
 
-  def test_quatre_71_81_91
-    assert_equal 'soixante-et-onze', translate_to_french(71)  # should have a "et-"
-    assert_equal 'quatre-vingt-un', translate_to_french(81)   # should not have "et"
+  def test_71_81_91_specific_rule_without_et
+    assert_equal 'soixante-et-onze', translate_to_french(71) # should have a "et-"
+    assert_equal 'quatre-vingt-un', translate_to_french(81) # should not have "et"
     assert_equal 'quatre-vingt-onze', translate_to_french(91) # should not have "et"
   end
 
   # todo :
   # > 100
+  # > 1000
+  # specific plural for "mille"
 end

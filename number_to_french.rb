@@ -35,7 +35,7 @@ end
 
 def get_ten(number)
   ten = number / 10
-  if ten == 1 || ten == 7 || ten == 9
+  if [1, 7, 9].include? ten
     ten -= 1
   end
   ten
