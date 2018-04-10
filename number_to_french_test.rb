@@ -64,10 +64,13 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'quatre-vingts', translate_to_french(80)
 
     # when followed by another number, "vingt" is singular, without an "S"
-    assert_equal 'quatre-vingt-quatre', translate_to_french(84) # and not "quatre-vingts-quatre"
+    assert_equal 'quatre-vingt-deux', translate_to_french(82) # and not "quatre-vingts-deux"
+    assert_equal 'quatre-vingt-quatre', translate_to_french(84)
+    assert_equal 'quatre-vingt-neuf', translate_to_french(89)
   end
 
   # todo :
+  # specific 71-81-91
   # specific : 71-79 & 91-99
   # > 100
 end

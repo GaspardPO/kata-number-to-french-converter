@@ -1,5 +1,3 @@
-require 'test/unit'
-
 ZERO = "zéro"
 
 def add_plural(number_as_string)
