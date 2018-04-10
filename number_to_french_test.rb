@@ -81,7 +81,12 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'quatre-vingt-dix-neuf', translate_to_french(99)
   end
 
+  def test_quatre_71_81_91
+    assert_equal 'soixante-et-onze', translate_to_french(71)  # should have a "et-"
+    assert_equal 'quatre-vingt-un', translate_to_french(81)   # should not have "et"
+    assert_equal 'quatre-vingt-onze', translate_to_french(91) # should not have "et"
+  end
+
   # todo :
-  # specific 71-81-91
   # > 100
 end

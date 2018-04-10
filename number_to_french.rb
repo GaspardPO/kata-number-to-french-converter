@@ -1,14 +1,10 @@
 ZERO = "zéro"
-UNITS_AS_STRING = [ZERO, "et-un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"]
+UNITS_AS_STRING = [ZERO, "et-un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "et-onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"]
 TENS_AS_STRING = [ZERO, "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingt", "quatre-vingt-dix"]
 
 def translate_to_french(number)
   if number == 0
     return ZERO
-  end
-
-  if number == 1
-    return "un"
   end
 
   ten = get_ten(number)
@@ -19,7 +15,14 @@ def translate_to_french(number)
                          .reject {|c| c == ZERO}
                          .join("-")
 
-  add_plural(number_as_string)
+  remove_unnecessary_et(add_plural(number_as_string), number)
+end
+
+def remove_unnecessary_et(number_as_string, number)
+  if [1, 11, 81, 91].include? number
+    number_as_string.slice! "et-"
+  end
+  number_as_string
 end
 
 private
