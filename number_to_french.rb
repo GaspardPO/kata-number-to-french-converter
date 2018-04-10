@@ -32,7 +32,7 @@ end
 
 def get_ten(number)
   ten = number / 10
-  if ten == 1 || ten == 7
+  if ten == 1 || ten == 7 || ten == 9
     ten -= 1
   end
   ten

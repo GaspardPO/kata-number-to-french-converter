@@ -75,8 +75,13 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'soixante-dix-neuf', translate_to_french(79)
   end
 
+  def test_quatre_vingt_dix
+    assert_equal 'quatre-vingt-douze', translate_to_french(92)
+    assert_equal 'quatre-vingt-quatorze', translate_to_french(94)
+    assert_equal 'quatre-vingt-dix-neuf', translate_to_french(99)
+  end
+
   # todo :
   # specific 71-81-91
-  # specific : 91-99
   # > 100
 end
