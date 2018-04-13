@@ -47,3 +47,14 @@ For some unknow reason, 71 use an "-et-", 81 and 91 use a dash.
 71 = 60 + 11 = "soixante-et-onze"  
 81 = 4*20 + 1 = "quatre-vingt-un"  
 91 = 4*20 + 11 = "quatre-vingt-onze"
+
+## 100 and more
+One hundred is "cent".  
+Then the rule is joining this and the rest with a dash:  
+130 = 100 + 30 = "cent-trente"  
+
+_**plural form of "cent"**  
+Like 80, 100 can be plural if it ends a word and then takes an S: "cents"  
+200 = 2 * 100 = "deux-cents"  
+When "cent" is not ending the word, then it is not plural:  
+252 = 2 * 100 + 52 = "deux-cent-cinquante-deux"

@@ -90,9 +90,17 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'cent-quarante-cinq', translate_to_french(145)
   end
 
+  def test_few_hundreds_and_something
+    assert_equal 'deux-cent-cinq', translate_to_french(205)
+    assert_equal 'neuf-cent-quatre-vingt-dix-neuf', translate_to_french(999)
+  end
+
+  def test_plural_cents
+    assert_equal 'deux-cents', translate_to_french(200)
+    assert_equal 'trois-cents', translate_to_french(300)
+  end
+
   # todo :
-  # >= 200
-  # plural "cent"
   # > 1000
   # specific plural for "mille"
 end

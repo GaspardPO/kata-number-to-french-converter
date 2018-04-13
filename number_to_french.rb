@@ -1,6 +1,9 @@
 ZERO = "zéro"
-UNITS_AS_STRING = [ZERO, "et-un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "et-onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"]
+BASIC_UNITS = ["deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf"]
+UNITS_AS_STRING = [ZERO, "et-un"] + BASIC_UNITS + ["dix", "et-onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"]
 TENS_AS_STRING = [ZERO, "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingt", "quatre-vingt-dix"]
+CENT = "cent"
+HUNDREDS_AS_STRING = [ZERO, CENT] + BASIC_UNITS.map {|unit| unit + "-cent"}
 
 class Translator
 
@@ -14,16 +17,11 @@ class Translator
       return ZERO
     end
 
-    if @original_number >= 100
-      hundreds = "cent"
-      @number -= 100
-    else
-      hundreds = ZERO
-    end
+    hundred_as_string = get_hundred_as_string
     ten_as_string = get_ten_as_string
     unit_as_string = UNITS_AS_STRING[@number]
 
-    number_as_string = [hundreds, ten_as_string, unit_as_string]
+    number_as_string = [hundred_as_string, ten_as_string, unit_as_string]
                            .reject {|c| c == ZERO}
                            .join("-")
 
@@ -32,6 +30,12 @@ class Translator
 
 
   private
+  def get_hundred_as_string
+    hundred = @number / 100
+    @number -= hundred * 100
+    HUNDREDS_AS_STRING[hundred]
+  end
+
   def get_ten_as_string
     ten = @number / 10
     if [1, 7, 9].include? ten
@@ -49,7 +53,7 @@ class Translator
   end
 
   def add_plural(number_as_string)
-    if number_as_string =~ /.vingt$/
+    if number_as_string =~ /.(vingt|cent)$/
       number_as_string += 's'
     end
     number_as_string
@@ -58,6 +62,5 @@ end
 
 def translate_to_french(number)
   translator = Translator.new number
-
   translator.translate
 end
