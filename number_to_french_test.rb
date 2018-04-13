@@ -85,8 +85,14 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'quatre-vingt-onze', translate_to_french(91) # should not have "et"
   end
 
+  def test_cent
+    assert_equal 'cent', translate_to_french(100)
+    assert_equal 'cent-quarante-cinq', translate_to_french(145)
+  end
+
   # todo :
-  # > 100
+  # >= 200
+  # plural "cent"
   # > 1000
   # specific plural for "mille"
 end
