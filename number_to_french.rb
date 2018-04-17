@@ -3,7 +3,9 @@ BASIC_UNITS = ["deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf"]
 UNITS_AS_STRING = [ZERO, "et-un"] + BASIC_UNITS + ["dix", "et-onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"]
 TENS_AS_STRING = [ZERO, "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingt", "quatre-vingt-dix"]
 CENT = "cent"
-HUNDREDS_AS_STRING = [ZERO, CENT] + BASIC_UNITS.map {|unit| unit + "-cent"}
+HUNDREDS_AS_STRING = [ZERO, CENT] + BASIC_UNITS.map {|unit| unit + "-" + CENT}
+MILLE = "mille"
+THOUSANDS_AS_STRING = [ZERO, MILLE] + BASIC_UNITS.map {|unit| unit + "-" + MILLE}
 
 class Translator
 
@@ -17,11 +19,12 @@ class Translator
       return ZERO
     end
 
+    thousand_as_string = get_thousand_as_string
     hundred_as_string = get_hundred_as_string
     ten_as_string = get_ten_as_string
     unit_as_string = UNITS_AS_STRING[@number]
 
-    number_as_string = [hundred_as_string, ten_as_string, unit_as_string]
+    number_as_string = [thousand_as_string, hundred_as_string, ten_as_string, unit_as_string]
                            .reject {|c| c == ZERO}
                            .join("-")
 
@@ -29,7 +32,14 @@ class Translator
   end
 
 
+
   private
+  def get_thousand_as_string
+    thousand = @number / 1000
+    @number -= thousand * 1000
+    THOUSANDS_AS_STRING[thousand]
+  end
+
   def get_hundred_as_string
     hundred = @number / 100
     @number -= hundred * 100

@@ -50,11 +50,15 @@ For some unknow reason, 71 use an "-et-", 81 and 91 use a dash.
 
 ## 100 and more
 One hundred is "cent".  
+One thousand is "mille"
 Then the rule is joining this and the rest with a dash:  
 130 = 100 + 30 = "cent-trente"  
+1110 = 1000 + 1000 + 10 = "mille-cent-dix"
 
-_**plural form of "cent"**  
-Like 80, 100 can be plural if it ends a word and then takes an S: "cents"  
+**plural form of "cent" and "mille**  
+Like 80, 100 and 1000 can be plural if it ends a word and then takes an S: "cents", "milles"  
 200 = 2 * 100 = "deux-cents"  
-When "cent" is not ending the word, then it is not plural:  
-252 = 2 * 100 + 52 = "deux-cent-cinquante-deux"
+3 000 = 3 * 1000 = "trois-milles"  
+When "cent" or "mille" is not ending the word, then it is not plural:  
+252 = 2 * 100 + 52 = "deux-cent-cinquante-deux"  
+2045 = 2 * 1000 + 45 = "deux-mille-quarante-cinq"
