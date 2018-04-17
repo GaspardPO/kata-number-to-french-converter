@@ -106,8 +106,13 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'mille-cent-quarante-cinq', translate_to_french(1145)
   end
 
+  def test_few_thousands_and_something
+    assert_equal 'deux-mille-cinq', translate_to_french(2005)
+    assert_equal 'neuf-mille-neuf-cent-quatre-vingt-dix-neuf', translate_to_french(9999)
+  end
 
-  # todo :
-  # > 1000
-  # specific plural for "mille"
+  def test_plural_milles
+    assert_equal 'deux-milles', translate_to_french(2000)
+    assert_equal 'trois-milles', translate_to_french(3000)
+  end
 end

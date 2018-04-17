@@ -63,7 +63,7 @@ class Translator
   end
 
   def add_plural(number_as_string)
-    if number_as_string =~ /.(vingt|cent)$/
+    if number_as_string =~ /.(vingt|#{CENT}|#{MILLE})$/
       number_as_string += 's'
     end
     number_as_string
