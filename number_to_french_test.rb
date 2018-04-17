@@ -115,4 +115,11 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'deux-milles', translate_to_french(2000)
     assert_equal 'trois-milles', translate_to_french(3000)
   end
+
+  def test_dix_milles
+    assert_equal 'dix-milles', translate_to_french(10000)
+    assert_equal 'vingt-milles', translate_to_french(20000)
+    assert_equal 'cent-cinquante-trois-mille-six-cent-vingt-deux', translate_to_french(153622)
+  end
+
 end

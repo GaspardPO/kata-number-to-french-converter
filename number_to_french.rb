@@ -32,12 +32,18 @@ class Translator
   end
 
 
-
   private
+
   def get_thousand_as_string
     thousand = @number / 1000
     @number -= thousand * 1000
-    THOUSANDS_AS_STRING[thousand]
+    if thousand > 1
+      translate_to_french(thousand) + "-" + MILLE
+    elsif thousand == 1
+      MILLE
+    else
+      ZERO
+    end
   end
 
   def get_hundred_as_string
