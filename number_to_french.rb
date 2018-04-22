@@ -62,7 +62,7 @@ class Translator
   end
 
   def remove_unnecessary_et(number_as_string, number)
-    if [1, 11, 81, 91].include? number
+    if [1, 11, 81, 91].include? number % 100
       number_as_string.slice! "et-"
     end
     number_as_string

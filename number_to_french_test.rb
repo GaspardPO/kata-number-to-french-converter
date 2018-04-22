@@ -83,6 +83,9 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'soixante-et-onze', translate_to_french(71) # should have a "et-"
     assert_equal 'quatre-vingt-un', translate_to_french(81) # should not have "et"
     assert_equal 'quatre-vingt-onze', translate_to_french(91) # should not have "et"
+    assert_equal 'cent-un', translate_to_french(101) # should not have "et"
+    assert_equal 'cent-quatre-vingt-onze', translate_to_french(191) # should not have "et"
+    assert_equal 'deux-mille-cent-quatre-vingt-onze', translate_to_french(2191) # should not have "et"
   end
 
   def test_cent
@@ -120,6 +123,7 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'dix-milles', translate_to_french(10000)
     assert_equal 'vingt-milles', translate_to_french(20000)
     assert_equal 'cent-cinquante-trois-mille-six-cent-vingt-deux', translate_to_french(153622)
+    assert_equal 'neuf-cent-quatre-vingt-dix-neuf-mille-neuf-cent-quatre-vingt-dix-neuf', translate_to_french(999999)
   end
 
 end
