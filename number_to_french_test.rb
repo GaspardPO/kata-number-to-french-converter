@@ -126,4 +126,14 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'neuf-cent-quatre-vingt-dix-neuf-mille-neuf-cent-quatre-vingt-dix-neuf', translate_to_french(999999)
   end
 
+  def test_specific_et_un_with_mille
+    assert_equal 'cinquante-et-un-mille-cinquante-et-un', translate_to_french(51051)
+    assert_equal 'quatre-vingt-un-mille-quatre-vingt-un', translate_to_french(81081)
+    assert_equal 'cinquante-et-un-mille-quatre-vingt-un', translate_to_french(51081)
+  end
+
+  # TODO : millions, milliards ....
+  # négatif
+  # décimal ?
+
 end
