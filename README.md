@@ -1,3 +1,4 @@
+
 Number can be hard to write in French.
 
 https://fr.wikipedia.org/wiki/Nombres_en_français
@@ -5,7 +6,7 @@ https://fr.wikipedia.org/wiki/Nombres_en_français
 Some rules:
 
 ## the units
-less than 10, or less than 16 follow no rules but each has a specific name.  
+less than 16 follow no rules but each has a specific name.  
 "zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize"  
 (from 0 to 16)
 
@@ -20,17 +21,18 @@ In French from France, the pattern change at 70:
 80 = 4 * 20 = "quatre-vingts"  
 90 = 4 * 20 + 10 = "quatre-vingt-dix" (because why not!)  
 
-
-## number from 22 to 29, then 32 to 39 ...
+## numbers from 22 to 29, then 32 to 39 ...
 the rule is easy:  
 22 = 20 + 2 = "vingt-deux", with a dash in between
+From 17 to 19, it follows this rule
+17 = 10 + 7 = "dix-sept"
 
-## number ending with 1:
+## numbers ending with 1:
 the rule is the same as above, but with "-et-" which means "and" instead of "-".    
 21 = "vingt-et-un"  
 Before 1990, the writing was "vingt et un" but since [the 1990 simplification reform](https://fr.wiktionary.org/wiki/Annexe:Rectifications_orthographiques_du_fran%C3%A7ais_en_1990#Num%C3%A9raux_compos%C3%A9s), all words used for numbers are joined-up with dashes.  
 
-## number after 70 and 90:
+## numbers after 70 and 90:
 74 = 60 + 14 = "soixante-quatorze"  
 77 = 60 + 17 = 60 + 10 + 7 = "soixante-dix-sept"  
 95 = 4 * 20 + 15 = "quatre-vingt-quinze"  

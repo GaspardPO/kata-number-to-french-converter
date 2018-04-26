@@ -1,7 +1,14 @@
 require 'test/unit'
-require "./number_to_french"
+require_relative 'number_parser.rb'
+require_relative 'number.rb'
+require_relative 'thousand.rb'
 
 class NumberToFrenchTest < Test::Unit::TestCase
+
+  def translate_to_french(number)
+    NumberParser.new(number).to_french
+  end
+
   def test_return_zero
     assert_equal 'zéro', translate_to_french(0)
   end
@@ -57,7 +64,7 @@ class NumberToFrenchTest < Test::Unit::TestCase
     assert_equal 'soixante-et-un', translate_to_french(61)
   end
 
-  def test_specific_quatre_vingts
+  def test_specific_plural_quatre_vingts
     # when not followed by anything, "vingts" is plural, with an "S"
     assert_equal 'quatre-vingts', translate_to_french(80)
 
