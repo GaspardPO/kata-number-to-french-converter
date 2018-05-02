@@ -27,7 +27,7 @@ class Number
                            .reject {|c| c == ZERO}
                            .join("-")
 
-    remove_unnecessary_et(pluralize(number_as_string, CENT), @original_number)
+    remove_unnecessary_et(pluralize_vingt_and_cent(number_as_string), @original_number)
   end
 
 
@@ -53,6 +53,10 @@ class Number
       number_as_string.slice! "et-"
     end
     number_as_string
+  end
+
+  def pluralize_vingt_and_cent(number_as_string)
+    pluralize(number_as_string, CENT)
   end
 
   def pluralize(number_as_string, to_pluralize)

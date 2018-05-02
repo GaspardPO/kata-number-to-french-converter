@@ -64,3 +64,5 @@ Like 80, 100 and 1000 can be plural if it ends a word and then takes an S: "cent
 When "cent" or "mille" is not ending the word, then it is not plural:  
 252 = 2 * 100 + 52 = "deux-cent-cinquante-deux"  
 2045 = 2 * 1000 + 45 = "deux-mille-quarante-cinq"
+200000 = 2 * 100 * 1000 = "deux-cent-milles", without S at "cents", but with S at "milles"    
+180000 = (100 + 4 * 20) * 1000 = "cent-quatre-vingt-milles", without S at "vingt", but with S at "milles"  

@@ -21,4 +21,9 @@ class Thousand < Number
 
     @should_pluralize ? pluralize(number_as_string, MILLE) : number_as_string
   end
+
+  def pluralize_vingt_and_cent(number_as_string)
+    # never pluralize as it will always be followed by "Mille"
+    number_as_string
+  end
 end
