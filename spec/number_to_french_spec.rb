@@ -1,4 +1,6 @@
-describe NumberParser do
+require './number_parser'
+
+describe "NumberParser" do
   context "number less than 20" do
     it('translate 0 to zéro') {expect(translate_to_french 0).to eql 'zéro'}
     it('translate 1 to un') {expect(translate_to_french 1).to eql 'un'}
